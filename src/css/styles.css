@@ -19,7 +19,9 @@
 body{
   margin: 0;
   padding: 0;
+  font-size: 36px;
 }
+
 ul {
   margin-top: 50px;
   margin-left: auto;
@@ -27,4 +29,29 @@ ul {
   display: flex;
   justify-content: space-around;
   font-size: 56px;
+}
+
+input{
+  font-size: 24px;
+}
+
+button{
+  margin-left: 10px;
+  scale: 1.5;
+}
+
+.timer{
+  display: flex;
+}
+.field{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: calc((100% - 60px) / 4);
+}
+.value{
+  font-size: 54px;
+}
+.label{
+  font-size: 34px;
 }
