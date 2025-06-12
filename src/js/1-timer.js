@@ -4,60 +4,7 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
 
-iziToast.show({
-    id: null, 
-    class: '',
-    title: '',
-    titleColor: 'red',
-    titleSize: '',
-    titleLineHeight: '',
-    message: '',
-    messageColor: '',
-    messageSize: '',
-    messageLineHeight: '',
-    backgroundColor: '',
-    theme: 'light', // dark
-    color: 'red', // blue, red, green, yellow
-    icon: '',
-    iconText: '',
-    iconColor: '',
-    iconUrl: null,
-    image: '',
-    imageWidth: 50,
-    maxWidth: null,
-    zindex: null,
-    layout: 1,
-    balloon: false,
-    close: true,
-    closeOnEscape: false,
-    closeOnClick: false,
-    displayMode: 0, // once, replace
-    position: 'bottomLeft', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
-    target: '',
-    targetFirst: true,
-    timeout: 5000,
-    rtl: false,
-    animateInside: true,
-    drag: true,
-    pauseOnHover: true,
-    resetOnHover: false,
-    progressBar: true,
-    progressBarColor: '',
-    progressBarEasing: 'linear',
-    overlay: false,
-    overlayClose: false,
-    overlayColor: 'rgba(0, 0, 0, 0.6)',
-    transitionIn: 'fadeInUp',
-    transitionOut: 'fadeOut',
-    transitionInMobile: 'fadeInUp',
-    transitionOutMobile: 'fadeOutDown',
-    buttons: {},
-    inputs: {},
-    onOpening: function () {},
-    onOpened: function () {},
-    onClosing: function () {},
-    onClosed: function () {}
-});
+
 
 const btn = document.querySelector("button");
 const input = document.querySelector("#datetime-picker");
@@ -107,9 +54,13 @@ const options = {
         if (selectedDates[0].getTime() < new Date()) {
             // window.alert("Please choose a date in the future");
             iziToast.show({
-                message: 'Please choose a date in the future'
+                title: 'Please choose a date in the future',
+                color: 'red', // blue, red, green, yellow
+                position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
+           
             });
             btn.disabled = true;
+           
         }
         else {
             btn.disabled = false;
@@ -119,6 +70,7 @@ const options = {
 
         ms = selectedDates[0].getTime() - new Date();
 
+        
         
     }
   };
@@ -161,58 +113,3 @@ function addLeadingZero(value) {
     
     
   }
-
-  iziToast.show({
-    id: null, 
-    class: '',
-    title: '',
-    titleColor: 'red',
-    titleSize: '',
-    titleLineHeight: '',
-    message: '',
-    messageColor: '',
-    messageSize: '',
-    messageLineHeight: '',
-    backgroundColor: '',
-    theme: 'light', // dark
-    color: '', // blue, red, green, yellow
-    icon: '',
-    iconText: '',
-    iconColor: '',
-    iconUrl: null,
-    image: '',
-    imageWidth: 50,
-    maxWidth: null,
-    zindex: null,
-    layout: 1,
-    balloon: false,
-    close: true,
-    closeOnEscape: false,
-    closeOnClick: false,
-    displayMode: 0, // once, replace
-    position: 'topLeft', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
-    target: '',
-    targetFirst: true,
-    timeout: 5000,
-    rtl: false,
-    animateInside: true,
-    drag: true,
-    pauseOnHover: true,
-    resetOnHover: false,
-    progressBar: true,
-    progressBarColor: '',
-    progressBarEasing: 'linear',
-    overlay: false,
-    overlayClose: false,
-    overlayColor: 'rgba(0, 0, 0, 0.6)',
-    transitionIn: 'fadeInUp',
-    transitionOut: 'fadeOut',
-    transitionInMobile: 'fadeInUp',
-    transitionOutMobile: 'fadeOutDown',
-    buttons: {},
-    inputs: {},
-    onOpening: function () {},
-    onOpened: function () {},
-    onClosing: function () {},
-    onClosed: function () {}
-});
